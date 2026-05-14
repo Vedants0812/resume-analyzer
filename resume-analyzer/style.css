@@ -1,0 +1,249 @@
+/* ===== RESET & BASE ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #f5f5f3;
+  color: #1a1a1a;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 1.75rem;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #111;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* ===== TEXTAREA ===== */
+textarea {
+  width: 100%;
+  min-height: 220px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 14px 16px;
+  resize: vertical;
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+  transition: border-color 0.2s;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #555;
+}
+
+/* ===== BUTTONS ===== */
+.btn-analyze {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-analyze:hover  { background: #333; }
+.btn-analyze:active { transform: scale(0.99); }
+
+.btn-reset {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 13px;
+  color: #666;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btn-reset:hover { color: #111; }
+
+/* ===== SCORE CARD ===== */
+.score-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 1.5rem;
+}
+
+.score-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.4s;
+}
+
+.score-number {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  color: #111;
+  transition: color 0.4s;
+}
+
+.score-slash {
+  font-size: 12px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.score-info h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.score-info p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ===== SECTION LABELS ===== */
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888;
+  margin: 1.5rem 0 0.75rem;
+}
+
+/* ===== BARS ===== */
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.bar-label {
+  width: 110px;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.bar-track {
+  flex: 1;
+  height: 7px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.7s ease;
+}
+
+.bar-val {
+  width: 40px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ===== SUGGESTIONS ===== */
+.suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  background: #fff;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.tip-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+.tip.good  { border-color: #b2e5d0; background: #f0fbf6; }
+.tip.warn  { border-color: #fad5a0; background: #fff9f0; }
+.tip.bad   { border-color: #f5c4b3; background: #fdf3ef; }
+
+.tip.good .tip-icon  { color: #0f6e56; }
+.tip.warn .tip-icon  { color: #ba7517; }
+.tip.bad  .tip-icon  { color: #993c1d; }
+
+/* ===== KEYWORDS ===== */
+.kw-hint {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.kw {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.kw.found   { background: #e1f5ee; color: #0f6e56; }
+.kw.missing { background: #faece7; color: #993c1d; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .score-card { flex-direction: column; text-align: center; }
+  .bar-label  { width: 90px; font-size: 12px; }
+}
